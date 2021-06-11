@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script>
+window.addEventListener("load", function(){ //시스템이 호출,
+    //익명함수
+    console.log("로드 되었어요");
+});
+console.log("안녕"); // 호출을 당하는 사람을 callback 이라한다
+
+//익명함수중에서 callback 당할때 callback 함수라한다
+//주로 비동기 방식에서 많이 사용된다.
+//11번이 먼저 수행될까 13 번째가 먼저 수행될까? 답은 13번
+//먼저 13번 먼저 읽고 나서 바디까지 읽고 난 후 이벤트가 발생했을때 11번을 읽음
+//순서를 지키지 않아서, 순서가 없어서 비동기라고 한다
+//콜백과 익명함수 구분할 줄 알아야함!!
+//콜백은 익명함수다? 대부분 익명함수다.
+//익명함수는 callback 이다? 아니다
+// 내가 전화했을때 이사람이 자리비워서 나중에 전화하겠대 상대방은 엥 언제 전화올까?
+// 그사람이 조건 날때 시간이 날때 전화를 주것지 그사람이 언제 시간이 되는지 알수 없다
+// 오로지 외부의 환경에 의해서 시점이 결정 호출을 하는 것이 아니라 호출을 받는 것
+//call 이 아니라 call을 back한다
+// 시점을 시스템이 결정해줘서 callback 한다.
+// 그래서 선생님은 개념을 알았기 때문에 순서가 잡혀있어서
+// 항상 윈도우 이벤트리스너 코드를 아래다 놓은 것 근데 실행시점은 시스템이 결정해서 아무대나 놔도 됨
+</script>
+</head>
+<body>
+
+</body>
+</html>

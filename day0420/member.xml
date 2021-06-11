@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xml은 html과 같은 부모에서 태어난 태그를 사용 할 수 있는 전자문서이다
+하지만, html과는 달리 대소문자를 구분하는 아주 까다로운 문법형식을 작성해야 한다.
+왜? 데이터를 표현하기 떄문에..
+xml 이란? 텍스트 기반의 데이터베이스.. -->
+<members>
+    <member>
+        <name>배트맨</name>
+        <age>38</age>
+    </member>
+</members>    
+<members>
+    <member>
+        <name>수퍼맨</name>
+        <age>37</age>
+    </member>
+</members>    
+<members>
+    <member>
+        <name>앤트맨</name>
+        <age>36</age>
+    </member>
+</members>    

@@ -1,0 +1,377 @@
+SQL> decs comments;
+SP2-0734: unknown command beginning "decs comme..." - rest of line ignored.
+SQL> desc comments;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMMENTS_ID                               NOT NULL NUMBER
+ NEWS_ID                                            NUMBER
+ MSG                                                VARCHAR2(100)
+ AUTHOR                                             VARCHAR2(20)
+ WRITEDAY                                           DATE
+
+SQL> show user;
+USER is "NODE"
+SQL> select * from comments;
+
+COMMENTS_ID    NEWS_ID                                                          
+----------- ----------                                                          
+MSG                                                                             
+--------------------------------------------------------------------------------
+AUTHOR                                   WRITEDAY                               
+---------------------------------------- --------                               
+          3         10                                                          
+ㄴㄴㄴㄴ                                                                        
+cdd                                      21/04/13                               
+                                                                                
+          4         10                                                          
+aa                                                                              
+aa                                       21/04/13                               
+
+COMMENTS_ID    NEWS_ID                                                          
+----------- ----------                                                          
+MSG                                                                             
+--------------------------------------------------------------------------------
+AUTHOR                                   WRITEDAY                               
+---------------------------------------- --------                               
+                                                                                
+          5         10                                                          
+dd                                                                              
+dd                                       21/04/13                               
+                                                                                
+          7         10                                                          
+ㄴㄴ                                                                            
+
+COMMENTS_ID    NEWS_ID                                                          
+----------- ----------                                                          
+MSG                                                                             
+--------------------------------------------------------------------------------
+AUTHOR                                   WRITEDAY                               
+---------------------------------------- --------                               
+ㅇㅇ                                     21/04/13                               
+                                                                                
+          8         10                                                          
+쑥떡                                                                            
+콩가루                                   21/04/13                               
+                                                                                
+          1         10                                                          
+
+COMMENTS_ID    NEWS_ID                                                          
+----------- ----------                                                          
+MSG                                                                             
+--------------------------------------------------------------------------------
+AUTHOR                                   WRITEDAY                               
+---------------------------------------- --------                               
+ㅇㅇ                                                                            
+ㄴㄴ                                     21/04/12                               
+                                                                                
+          2         10                                                          
+떡볶이                                                                          
+신전                                     21/04/12                               
+                                                                                
+
+COMMENTS_ID    NEWS_ID                                                          
+----------- ----------                                                          
+MSG                                                                             
+--------------------------------------------------------------------------------
+AUTHOR                                   WRITEDAY                               
+---------------------------------------- --------                               
+          6         10                                                          
+순대                                                                            
+튀김                                     21/04/13                               
+                                                                                
+
+8 rows selected.
+
+SQL> conn adam/1234
+Connected.
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------------------------------------                    
+MEMBER                                                                          
+DEPT                                                                            
+EMP                                                                             
+MEMBER2                                                                         
+MEMBER3                                                                         
+MEMBER4                                                                         
+MEMBER5                                                                         
+MEMBER6                                                                         
+CATEGORY                                                                        
+PRODUCT                                                                         
+
+10 rows selected.
+
+SQL> --부서를 확인해보자
+SQL> set line 350
+SQL> select * from dept;
+
+    DEPTNO DNAME                        LOC                                                                                                                                                                                                                                                                                                                   
+---------- ---------------------------- --------------------------                                                                                                                                                                                                                                                                                            
+        10 ACCOUNTING                   NEW YORK                                                                                                                                                                                                                                                                                                              
+        20 RESEARCH                     DALLAS                                                                                                                                                                                                                                                                                                                
+        30 SALES                        CHICAGO                                                                                                                                                                                                                                                                                                               
+        40 OPERATIONS                   BOSTON                                                                                                                                                                                                                                                                                                                
+
+SQL> select * from emp;
+
+     EMPNO ENAME                JOB                       MGR HIREDATE        SAL       COMM     DEPTNO                                                                                                                                                                                                                                                       
+---------- -------------------- ------------------ ---------- -------- ---------- ---------- ----------                                                                                                                                                                                                                                                       
+      7369 SMITH                CLERK                    7902 80/12/17        800                    20                                                                                                                                                                                                                                                       
+      7499 ALLEN                SALESMAN                 7698 81/02/20       1600        300         30                                                                                                                                                                                                                                                       
+      7521 WARD                 SALESMAN                 7698 81/02/22       1250        500         30                                                                                                                                                                                                                                                       
+      7566 JONES                MANAGER                  7839 81/04/02       2975                    20                                                                                                                                                                                                                                                       
+      7654 MARTIN               SALESMAN                 7698 81/09/28       1250       1400         30                                                                                                                                                                                                                                                       
+      7698 BLAKE                MANAGER                  7839 81/05/01       2850                    30                                                                                                                                                                                                                                                       
+      7782 CLARK                MANAGER                  7839 81/06/09       2450                    10                                                                                                                                                                                                                                                       
+      7788 SCOTT                ANALYST                  7566 87/04/19       3000                    20                                                                                                                                                                                                                                                       
+      7839 KING                 PRESIDENT                     81/11/17       5000                    10                                                                                                                                                                                                                                                       
+      7844 TURNER               SALESMAN                 7698 81/09/08       1500          0         30                                                                                                                                                                                                                                                       
+      7876 ADAMS                CLERK                    7788 87/05/23       1100                    20                                                                                                                                                                                                                                                       
+
+     EMPNO ENAME                JOB                       MGR HIREDATE        SAL       COMM     DEPTNO                                                                                                                                                                                                                                                       
+---------- -------------------- ------------------ ---------- -------- ---------- ---------- ----------                                                                                                                                                                                                                                                       
+      7900 JAMES                CLERK                    7698 81/12/03        950                    30                                                                                                                                                                                                                                                       
+      7902 FORD                 ANALYST                  7566 81/12/03       3000                    20                                                                                                                                                                                                                                                       
+      7934 MILLER               CLERK                    7782 82/01/23       1300                    10                                                                                                                                                                                                                                                       
+
+14 rows selected.
+
+SQL> --부서별 사원수를 출력하시오
+SQL> select deptno from emp;
+
+    DEPTNO                                                                                                                                                                                                                                                                                                                                                    
+----------                                                                                                                                                                                                                                                                                                                                                    
+        20                                                                                                                                                                                                                                                                                                                                                    
+        30                                                                                                                                                                                                                                                                                                                                                    
+        30                                                                                                                                                                                                                                                                                                                                                    
+        20                                                                                                                                                                                                                                                                                                                                                    
+        30                                                                                                                                                                                                                                                                                                                                                    
+        30                                                                                                                                                                                                                                                                                                                                                    
+        10                                                                                                                                                                                                                                                                                                                                                    
+        20                                                                                                                                                                                                                                                                                                                                                    
+        10                                                                                                                                                                                                                                                                                                                                                    
+        30                                                                                                                                                                                                                                                                                                                                                    
+        20                                                                                                                                                                                                                                                                                                                                                    
+
+    DEPTNO                                                                                                                                                                                                                                                                                                                                                    
+----------                                                                                                                                                                                                                                                                                                                                                    
+        30                                                                                                                                                                                                                                                                                                                                                    
+        20                                                                                                                                                                                                                                                                                                                                                    
+        10                                                                                                                                                                                                                                                                                                                                                    
+
+14 rows selected.
+
+SQL> select deptno from emp group by deptno;
+
+    DEPTNO                                                                                                                                                                                                                                                                                                                                                    
+----------                                                                                                                                                                                                                                                                                                                                                    
+        30                                                                                                                                                                                                                                                                                                                                                    
+        20                                                                                                                                                                                                                                                                                                                                                    
+        10                                                                                                                                                                                                                                                                                                                                                    
+
+SQL> select deptno,ename from emp group by deptno;
+select deptno,ename from emp group by deptno
+              *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> select deptno, count(*) from emp group by deptno;
+
+    DEPTNO   COUNT(*)                                                                                                                                                                                                                                                                                                                                         
+---------- ----------                                                                                                                                                                                                                                                                                                                                         
+        30          6                                                                                                                                                                                                                                                                                                                                         
+        20          5                                                                                                                                                                                                                                                                                                                                         
+        10          3                                                                                                                                                                                                                                                                                                                                         
+
+SQL> select deptno, dname, count(*) from emp group by deptno;
+select deptno, dname, count(*) from emp group by deptno
+               *
+ERROR at line 1:
+ORA-00904: "DNAME": invalid identifier 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select d.deptno, dname, ename 
+  2  from emp e, dept d
+  3* where e.deptno=d.depno
+SQL> /
+where e.deptno=d.depno
+               *
+ERROR at line 3:
+ORA-00904: "D"."DEPNO": invalid identifier 
+
+
+SQL> select d.deptno, dname, ename
+  2  from emp e, dept d
+  3  where e.deptno=d.deptno
+  4  /
+
+    DEPTNO DNAME                        ENAME                                                                                                                                                                                                                                                                                                                 
+---------- ---------------------------- --------------------                                                                                                                                                                                                                                                                                                  
+        10 ACCOUNTING                   CLARK                                                                                                                                                                                                                                                                                                                 
+        10 ACCOUNTING                   KING                                                                                                                                                                                                                                                                                                                  
+        10 ACCOUNTING                   MILLER                                                                                                                                                                                                                                                                                                                
+        20 RESEARCH                     JONES                                                                                                                                                                                                                                                                                                                 
+        20 RESEARCH                     FORD                                                                                                                                                                                                                                                                                                                  
+        20 RESEARCH                     ADAMS                                                                                                                                                                                                                                                                                                                 
+        20 RESEARCH                     SMITH                                                                                                                                                                                                                                                                                                                 
+        20 RESEARCH                     SCOTT                                                                                                                                                                                                                                                                                                                 
+        30 SALES                        WARD                                                                                                                                                                                                                                                                                                                  
+        30 SALES                        TURNER                                                                                                                                                                                                                                                                                                                
+        30 SALES                        ALLEN                                                                                                                                                                                                                                                                                                                 
+
+    DEPTNO DNAME                        ENAME                                                                                                                                                                                                                                                                                                                 
+---------- ---------------------------- --------------------                                                                                                                                                                                                                                                                                                  
+        30 SALES                        JAMES                                                                                                                                                                                                                                                                                                                 
+        30 SALES                        BLAKE                                                                                                                                                                                                                                                                                                                 
+        30 SALES                        MARTIN                                                                                                                                                                                                                                                                                                                
+
+14 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select d.deptno, dname, count(ename)
+  2  from emp e, dept d
+  3  where e.deptno=d.deptno
+  4* group by d.deptno , dname
+SQL> /
+
+    DEPTNO DNAME                        COUNT(ENAME)                                                                                                                                                                                                                                                                                                          
+---------- ---------------------------- ------------                                                                                                                                                                                                                                                                                                          
+        10 ACCOUNTING                              3                                                                                                                                                                                                                                                                                                          
+        20 RESEARCH                                5                                                                                                                                                                                                                                                                                                          
+        30 SALES                                   6                                                                                                                                                                                                                                                                                                          
+
+SQL> select * from dept;
+
+    DEPTNO DNAME                        LOC                                                                                                                                                                                                                                                                                                                   
+---------- ---------------------------- --------------------------                                                                                                                                                                                                                                                                                            
+        10 ACCOUNTING                   NEW YORK                                                                                                                                                                                                                                                                                                              
+        20 RESEARCH                     DALLAS                                                                                                                                                                                                                                                                                                                
+        30 SALES                        CHICAGO                                                                                                                                                                                                                                                                                                               
+        40 OPERATIONS                   BOSTON                                                                                                                                                                                                                                                                                                                
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select d. deptno, dname, count(ename)
+  2  from dept d left outer join on emp e
+  3* on d.deptno=e.deptno
+SQL> /
+from dept d left outer join on emp e
+                            *
+ERROR at line 2:
+ORA-00903: invalid table name 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select d.deptno, dname, ename
+  2  from dept d left outer join emp e
+  3* on d.deptno=e.deptno
+SQL> /
+
+    DEPTNO DNAME                        ENAME                                                                                                                                                                                                                                                                                                                 
+---------- ---------------------------- --------------------                                                                                                                                                                                                                                                                                                  
+        10 ACCOUNTING                   CLARK                                                                                                                                                                                                                                                                                                                 
+        10 ACCOUNTING                   KING                                                                                                                                                                                                                                                                                                                  
+        10 ACCOUNTING                   MILLER                                                                                                                                                                                                                                                                                                                
+        20 RESEARCH                     JONES                                                                                                                                                                                                                                                                                                                 
+        20 RESEARCH                     FORD                                                                                                                                                                                                                                                                                                                  
+        20 RESEARCH                     ADAMS                                                                                                                                                                                                                                                                                                                 
+        20 RESEARCH                     SMITH                                                                                                                                                                                                                                                                                                                 
+        20 RESEARCH                     SCOTT                                                                                                                                                                                                                                                                                                                 
+        30 SALES                        WARD                                                                                                                                                                                                                                                                                                                  
+        30 SALES                        TURNER                                                                                                                                                                                                                                                                                                                
+        30 SALES                        ALLEN                                                                                                                                                                                                                                                                                                                 
+
+    DEPTNO DNAME                        ENAME                                                                                                                                                                                                                                                                                                                 
+---------- ---------------------------- --------------------                                                                                                                                                                                                                                                                                                  
+        30 SALES                        JAMES                                                                                                                                                                                                                                                                                                                 
+        30 SALES                        BLAKE                                                                                                                                                                                                                                                                                                                 
+        30 SALES                        MARTIN                                                                                                                                                                                                                                                                                                                
+        40 OPERATIONS                                                                                                                                                                                                                                                                                                                                         
+
+15 rows selected.
+
+SQL> --40번 등장 아우터 조인으로 인해
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select d.deptno, dname, count(ename)
+  2  from dept d left outer join emp e
+  3  on d.deptno=e.deptno
+  4* group by d.deptno, dname
+SQL> /
+
+    DEPTNO DNAME                        COUNT(ENAME)                                                                                                                                                                                                                                                                                                          
+---------- ---------------------------- ------------                                                                                                                                                                                                                                                                                                          
+        10 ACCOUNTING                              3                                                                                                                                                                                                                                                                                                          
+        40 OPERATIONS                              0                                                                                                                                                                                                                                                                                                          
+        20 RESEARCH                                5                                                                                                                                                                                                                                                                                                          
+        30 SALES                                   6                                                                                                                                                                                                                                                                                                          
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select n.news_id, title, writer, regdate, hit , count(msg)
+  2  from news n left outer join comments c
+  3  on n.news_id=c.news_id
+  4* group by n.new_id, title, writer, regdate, hit
+SQL> /
+from news n left outer join comments c
+                            *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> show user
+USER is "ADAM"
+SQL> conn node/node
+Connected.
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select n.news_id, title, writer, regdate, hit , count(msg)
+  2  from news n left outer join comments c
+  3  on n.news_id=c.news_id
+  4* group by n.new_id, title, writer, regdate, hit
+SQL> /
+group by n.new_id, title, writer, regdate, hit
+         *
+ERROR at line 4:
+ORA-00904: "N"."NEW_ID": invalid identifier 
+
+
+SQL> select d.deptno, dname, ename
+  2  from emp e, dept d
+  3  where e.deptno=d.deptno
+  4  /
+from emp e, dept d
+            *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select  n.news_id, title, writer, regdate, hit , count(msg)
+  2  from news n  left outer join  comments c
+  3  on n.news_id=c.news_id
+  4* group by n.news_id, title, writer, regdate, hit
+SQL> /
+
+   NEWS_ID TITLE                                                                                                                                                                                                    WRITER                                   REGDATE         HIT COUNT(MSG)                                                                   
+---------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------- -------- ---------- ----------                                                                   
+         9 호                                                                                                                                                                                                       ㅇ                                       21/04/12          0          5                                                                   
+        11                                                                                                                                                                                                                                                   21/04/12          0          0                                                                   
+        10 ㅌㅌ                                                                                                                                                                                                     ㅌㅌ                                     21/04/12          0         18                                                                   
+         8 ㅎㅇ                                                                                                                                                                                                     예예옝                                   21/04/12          0          0                                                                   
+
+SQL> spool off

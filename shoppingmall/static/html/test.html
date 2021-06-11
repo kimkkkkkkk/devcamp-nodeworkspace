@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script>
+    function setValue(obj){
+        console.log("obj", obj);
+        //문서내의 bt 라는 녀석의 value를 나 눌렀어! 바꾸어본다!!
+        //document.getElementById("bt").value="나 눌렀어?";
+        obj.value="나 눌렀어?";
+    }
+</script>
+</head>
+<body>
+    <select onChange="alert(this.value);">
+        <option value="red">빨강</option>
+        <option value="red">파랑</option>
+        <option value="red">노랑</option>
+    </select>
+    <input type="button" value="나버튼" id="bt" onClick="setValue(this)">
+    <!-- <input type="button" value="나버튼" id="bt" onClick="this.value='눌렀어?'"> -->
+</body>
+</html>
